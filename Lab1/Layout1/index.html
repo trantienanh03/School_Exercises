@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            margin: 5px;
+        }
+
+        .header, footer, .content, .container {
+            border: 2px solid #000;
+        }
+
+        .header {
+            padding: 20px;
+            background-color: #eee;
+        }
+
+        .content .left {
+            flex-basis: 20%;
+            border-right: 2px solid #000;
+            background-color: olive;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <h1>PROCESS LAYOUT EXAMPLE</h1>
+        </div>
+        <div class="content">
+            <div class="left">
+                <h4>Main Menu</h4>
+                <a>Link one</a>
+                <br>
+                <a>Link two</a>
+                <br>
+                <a>Link three</a>
+                <br>
+                <a>Link four</a>
+            </div>
+            <div class="right">This is an example layout using the tables</div>
+        </div>
+        <div class="footer">
+            <h2>www.Example of layout using tables.com</h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>
