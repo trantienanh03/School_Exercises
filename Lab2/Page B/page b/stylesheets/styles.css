@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: sans-serif, Tahoma;
+}
+
+:root {
+    --BG-COLOR: #f3f3f3;
+}
+
+
+/* CSS FOR ID */
+/* HEADER */
+#section_text_2 {
+    background-color: var(--BG-COLOR);
+    height: 120px;
+}
+
+#section_text_2 .alpha {
+    float: left;
+    width: 50%;
+}
+
+#section_text_2 .alpha img {
+    margin-top: 35px;
+    width: 170px;
+}
+
+#section_text_2 .omega {
+    padding-top: 40px;
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+#section_text_2 .omega a {
+    padding: 15px 30px;
+    background-color: #f77825;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* NAVIGATION BAR */
+#section_header_1 {
+    height: 100px;
+}
+
+#section_header_1 nav .navbar-left {
+    float: left;
+    width: 70%;
+}
+
+#section_header_1 nav ul li {
+    list-style-type: none;
+    float: left;
+    width: fit-content;
+    padding-top: 45px;
+}
+
+#section_header_1 nav ul.navbar-left li a {
+    text-decoration: none;
+    color: #7f7f7f;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#section_header_1 nav .right_socials {
+    float: right;
+    width: 30%;
+}
+
+#section_slider {
+    height: 665px;
+    background-color: var(--BG-COLOR);
+}
+
+#section_slider .slide ol li {
+    list-style-type: none;
+}
+
+#section_gym_4 {
+    height: 400px;
+}
+
+
+#section_intro_title {
+    height: 600px;
+    background-color: var(--BG-COLOR);
+}
+
+#section_intro_title .container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#section_intro_title .one-third {
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 380px;
+    height: 500px;
+    text-align: center;
+}
+
+#section_intro_title .blue_text strong {
+    color: #2cbfe8;
+    font-size: 50px;
+}
+
+#section_intro_title .orange strong {
+    color: #f77825;
+    font-size: 50px;
+}
+
+#section_intro_title .one-third .big_title {
+    margin-bottom: 10px;
+}
+
+#section_party_3 {
+    height: 735px;
+    background-color: #191919;
+}
+
+#section_party_3 {
+    background-color: #191919;
+    color: #fff;
+    padding: 80px 0;
+}
+
+#section_party_3 .text_input {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #282828;
+    background-color: #151515;
+    padding: 100px;
+}
+
+#section_party_3 .headtext_style {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#section_party_3 .segment {
+    width: 50px;
+    height: 3px;
+    background-color: #328ff1;
+    margin: 20px auto;
+}
+
+#section_party_3 .subtext_style {
+    font-size: 18px;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+#section_party_3 .contact_st form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#section_party_3 .contact_st input[type="text"],
+#section_party_3 .contact_st input[type="email"] {
+    padding: 12px;
+    border: none;
+    background-color: #fff;
+    color: #fff;
+    font-size: 16px;
+}
+
+#section_party_3 .subscribe_btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #328ff1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#section_party_4 {
+    height: 80px;
+    background-color: #151515;
+}
+/* CSS FOR CLASS */
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-inner {
+    position: relative;
+}
+
+.carousel-inner .item img {
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(13, 8, 8, 0.5);
+    color: #fff;
+    text-align: left;
+}
+
+.carousel-inner .item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-caption h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0px 5px;
+}
+
+.top_padding {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 50px
+}
+
+.top_padding {
+    text-align: center;
+}
+
+.top_padding .gym_st .editContent {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bolder;
+}
+
+.top_padding .gym_text {
+    margin-bottom: 20px;
+    color: #7f7f7f;
+}
+
+.img_gym_st img {
+    height: 250px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.link_3_btn a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #f77825;
+    color: #fff;
+}
+
+.light_gray {
+    color: #888;
+    margin: 5px 0;
+}
+
+.flat_pricing_list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.pix_text {
+    margin: 5px 0;
+}
+
+.active_bg_open {
+    display: inline-block;
+    background-color: #2cbfe8;
+    color: white;
+    padding: 30px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.orange_bg {
+    background-color: #f77825;
+}
+
+.one-third .light_gray {
+    margin-bottom: 70px;
+
+}
+
+.one-third .light_gray strong {
+    font-size: 20px;
+}
+
+.one-third .flat_pricing_list li {
+    margin-bottom: 50px;
+}
+
+.one-third .flat_pricing_list li .editContent {
+    font-size: 20px;
+}
+
+.text_input .headtext_style .pix_text {
+    font-size: 30px;
+}
+.foot_st .sixteen {
+    display: flex;
+}
+.foot_st .sixteen .alpha {
+    flex-basis: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+.foot_st .sixteen .alpha .editContent {
+    margin-top: 20px;
+    color: #888;
+    font-size: 30px;
+}
+.foot_st .sixteen .alpha .editContent .rights_st {
+    font-size: 15px;
+}
+.foot_st .sixteen .alpha .editContent  .pixfort_st {
+    font-size: 15px;
+    color: #328ff1;
+    font-weight: bold;
+}
+.foot_st .sixteen .omega {
+    flex-basis: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+.foot_st .sixteen .omega .editContent {
+    margin-top: 20px;
+    color: #888;
+}
+.foot_st .sixteen .omega .editContent .pix_text {
+    font-size: 15px;
+}

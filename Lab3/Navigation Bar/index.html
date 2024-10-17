@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: sans-serif, Tahoma;
+        }
+
+        #wrapper {
+            width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #wrapper .menu {
+            height: 50px;
+            background-color: #eee;
+            border-left: 5px solid darkred;
+            border-bottom: 2px solid darkred;
+        }
+
+        #wrapper .menu li {
+            list-style-type: none;
+        }
+
+        #wrapper .menu > ul > li {
+            float: left;
+            width: fit-content;
+            padding: 17px;
+            font-weight: 700;
+        }
+
+        #wrapper .menu > ul > li:hover {
+            background-color: darkred;
+            color: white;
+            cursor: pointer;
+        }
+
+        #wrapper .menu ul.contact {
+            position: absolute; /*lia chuot vao an ptu con*/
+            background-color: #eeeeee;
+            display: none;
+            margin-left: -17px;
+            margin-top: 17px;
+            border-top: 2px solid darkred;
+        }
+
+        #wrapper .menu > ul > li:hover ul.contact {
+            display: block;
+        }
+
+        #wrapper .menu ul.contact > li {
+            float: none;
+            width: auto;
+            padding: 17.5px;
+            color: black;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #wrapper .menu ul .contact > li:hover {
+            background-color: darkred;
+            color: white;
+            cursor: pointer;
+        }
+
+        #wrapper .menu ul.sub {
+            position: absolute;
+            background-color: #eeeeee;
+            display: none;
+            margin-left: -17px;
+            margin-top: 17px;
+            border-top: 2px solid darkred;
+        }
+
+        #wrapper .menu > ul > li:hover ul.sub {
+            display: block;
+        }
+
+        #wrapper .menu ul.sub > li {
+            float: none;
+            width: auto;
+            padding: 15px;
+            color: black;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #wrapper .menu ul .sub > li:hover {
+            background-color: darkred;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="menu">
+        <ul>
+            <li>HOME</li>
+            <li>
+                <span>PRODUCT</span>
+                <ul class="sub">
+                    <li>Tivi</li>
+                    <li>Máy tính xách tay</li>
+                </ul>
+            </li>
+            <li>ABOUT US</li>
+            <li>
+                <span>CONTACT</span>
+                <ul class="contact">
+                    <li>Facebook</li>
+                    <li>Zalo</li>
+                    <li>Instagram</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
