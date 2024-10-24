@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper {
+            height: 100vh;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        .button-container {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button {
+            padding: 20px 40px;
+            border: 2px solid #eee;
+        }
+
+        .button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="button-container">
+            <button class="button" style="background-color: red;" onclick="changeBackgroundColor('red')">Red</button>
+            <button class="button" style="background-color: blue;" onclick="changeBackgroundColor('blue')">Blue</button>
+            <button class="button" style="background-color: green;" onclick="changeBackgroundColor('green')">Green
+            </button>
+            <button class="button" style="background-color: yellow;" onclick="changeBackgroundColor('yellow')">Yellow
+            </button>
+            <button class="button" style="background-color: purple;" onclick="changeBackgroundColor('purple')">Purple
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    function changeBackgroundColor(color) {
+        document.body.style.background = color;
+    }
+</script>
+</body>
+</html>

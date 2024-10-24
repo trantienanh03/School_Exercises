@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <img id="image" src="https://picsum.photos/400">
+    </div>
+</div>
+<script>
+    let angle = 0;
+
+    setInterval(() => {
+        angle += 15; // Increase angle by 15 degrees
+        document.getElementById('image').style.transform = `rotate(${angle}deg)`;
+    }, 2000);
+</script>
+</body>
+</html>

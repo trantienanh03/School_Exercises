@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper {
+            height: 100vh;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .input-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <h1>GIẢI PHƯƠNG TRÌNH BẬC 2</h1>
+        <div class="input-container">
+            <label for="a">Nhập số A: </label>
+            <input type="text" id="a" placeholder="Nhập số A">
+            <br>
+        </div>
+        <div class="input-container">
+            <label for="b">Nhập số B: </label>
+            <input type="text" id="b" placeholder="Nhập số B">
+            <br>
+        </div>
+        <div class="input-container">
+            <label for="c">Nhập số C: </label>
+            <input type="text" id="c" placeholder="Nhập số C">
+            <br>
+        </div>
+        <div class="input-container">
+            <button onclick="ptBac2()">GIẢI</button>
+            <h2>Kết quả: </h2>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+<script>
+    function ptBac2() {
+        let a = parseFloat(document.getElementById("a").value)
+        let b = parseFloat(document.getElementById("b").value)
+        let c = parseFloat(document.getElementById("c").value)
+        console.log("a:", a, "b:", b, "c:", c);
+        if (a === 0) {
+            document.getElementById("result").textContent = "Không phải phương trình bậc hai";
+        } else {
+            let delta = b * b - 4 * a * c;
+            let res = "";
+            if (delta < 0) {
+                res = "Phương trình vô nghiệm.";
+            } else if (delta === 0) {
+                let x = -b / (2 * a);
+                res = "Phương trình có nghiệm kép: x = " + x;
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                res = "Phương trình có hai nghiệm phân biệt: x1 = " + x1 + ", x2 = " + x2;
+            }
+            document.getElementById("result").textContent = res;
+        }
+    }
+</script>
+</body>
+</html>

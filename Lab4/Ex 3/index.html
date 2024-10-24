@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2dc0e8;
+            font-family: Arial, sans-serif;
+        }
+
+        .greeting-box {
+            background-color: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        #greeting {
+            font-size: 24px;
+            color: #000;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="greeting-box">
+    <p id="greeting"></p>
+</div>
+
+<script>
+    const greetings = [
+        // Lời chào buổi sáng
+        "Chào buổi sáng! Một ngày mới tràn đầy năng lượng nhé! 🌅",
+        "Xin chào! Chúc bạn một buổi sáng tràn đầy nắng ấm! ☀️",
+        "Buổi sáng vui vẻ! Hãy bắt đầu ngày mới thật hạnh phúc! 🌞",
+        "Chào ngày mới! Hy vọng bạn đã có một giấc ngủ thật ngon! 😊",
+        "Xin chào buổi sáng! Hãy tận hưởng một ngày thật đẹp! 🌈",
+
+        // Lời chào buổi trưa
+        "Chào buổi trưa! Đừng quên ăn trưa đầy đủ nhé! 🍱",
+        "Xin chào! Chúc bạn có một bữa trưa ngon miệng! 🍜",
+        "Buổi trưa vui vẻ! Hãy nghỉ ngơi một chút nhé! 🌤️",
+        "Chào bạn! Đã đến giờ ăn trưa rồi đấy! 🍛",
+        "Trưa rồi! Nhớ nạp năng lượng đầy đủ nhé! 🥗",
+
+        // Lời chào buổi chiều
+        "Chào buổi chiều! Công việc thuận lợi nhé! 💼",
+        "Xin chào! Chúc bạn có một buổi chiều năng suất! 📊",
+        "Buổi chiều vui vẻ! Cố gắng hoàn thành công việc nào! 💪",
+        "Chào bạn! Đừng quên uống đủ nước nhé! 💧",
+        "Chiều rồi! Hãy giữ tinh thần làm việc hăng say! 🎯",
+
+        // Lời chào buổi tối
+        "Chào buổi tối! Hãy thư giãn sau một ngày dài! 🌙",
+        "Xin chào! Chúc bạn có một buổi tối ấm áp! 🌆",
+        "Buổi tối vui vẻ! Đã đến lúc nghỉ ngơi rồi! 😴",
+        "Chào bạn! Chúc bạn ngủ ngon! 💫",
+        "Tối rồi! Hãy tận hưởng thời gian bên gia đình! 🏠",
+
+        // Lời chúc may mắn
+        "Xin chào! Chúc bạn gặp nhiều may mắn! 🍀",
+        "Chào bạn! Hy vọng mọi điều tốt đẹp sẽ đến với bạn! ✨",
+        "Hello! Chúc bạn luôn được bình an! 🕊️",
+        "Xin chào! Mọi việc sẽ suôn sẻ thôi! 🌟",
+        "Chào nhé! May mắn sẽ mỉm cười với bạn! 🎲",
+
+        // Lời chúc động viên
+        "Hãy cố lên! Bạn làm được mà! 💪",
+        "Đừng bỏ cuộc! Thành công đang chờ phía trước! 🎯",
+        "Tin vào bản thân! Bạn là người giỏi nhất! 🌟",
+        "Mọi nỗ lực sẽ được đền đáp xứng đáng! ✨",
+        "Hôm nay khó khăn, ngày mai sẽ tốt đẹp hơn! 🌅",
+
+        // Lời chào thân thiện
+        "Hey! Rất vui được gặp bạn! 👋",
+        "Chào bạn thân mến! 🤗",
+        "Hello! Hôm nay bạn trông thật tuyệt! 👍",
+        "Hi there! Có một ngày thật vui nhé! 😊",
+        "Xin chào! Hãy luôn giữ nụ cười tươi! 😄",
+
+        // Lời chào tích cực
+        "Hãy tỏa sáng như ánh mặt trời! ☀️",
+        "Mỗi ngày đều là một cơ hội mới! 🌈",
+        "Bạn là người tuyệt vời nhất! 🌟",
+        "Hôm nay sẽ là một ngày đặc biệt! ✨",
+        "Hãy sống hết mình cho ngày hôm nay! 💫",
+
+        // Lời chào theo mùa
+        "Chào mùa xuân tươi mới! 🌸",
+        "Xin chào! Hãy tận hưởng nắng ấm mùa hạ! ☀️",
+        "Chào mùa thu dịu dàng! 🍂",
+        "Hello! Mùa đông ấm áp nhé! ❄️",
+        "Chào ngày mới với tiết trời trong lành! 🌤️",
+
+        // Lời chào văn nghệ
+        "Cuộc sống tươi đẹp như một bản nhạc! 🎵",
+        "Hãy nhảy múa theo điệu nhạc của cuộc đời! 💃",
+        "Mỗi ngày là một tác phẩm nghệ thuật! 🎨",
+        "Hãy tô màu cho cuộc sống của bạn! 🖌️",
+        "Sống đẹp như thơ, vui như nhạc! 🎼",
+
+        // Lời chào học tập/công việc
+        "Chúc bạn học tập tốt! 📚",
+        "Công việc suôn sẻ nhé! 💼",
+        "Đừng quên đặt mục tiêu mới! 🎯",
+        "Hãy cố gắng hết mình! 💪",
+        "Thành công đang chờ đón bạn! 🏆",
+
+        // Lời chào sức khỏe
+        "Chúc bạn luôn khỏe mạnh! 💪",
+        "Hãy chăm sóc sức khỏe thật tốt! 🏃‍♂️",
+        "Năng lượng tràn đầy nhé! 🔋",
+        "Giữ gìn sức khỏe là trên hết! ❤️",
+        "Khỏe mạnh là đầu tư tốt nhất! 🍎",
+
+        // Lời chào hài hước
+        "Xin chào! Hôm nay bạn trông thật đẹp trai/xinh gái! 😎",
+        "Hey! Nụ cười của bạn làm tan chảy băng ở Bắc Cực! 😄",
+        "Chào người tuyệt vời nhất vũ trụ! 🌍",
+        "Hi! Bạn là siêu sao của ngày hôm nay! ⭐",
+        "Hello! Đừng quên mang theo siêu năng lực của mình nhé! 💫",
+
+        // Lời chào về thời tiết
+        "Chào ngày nắng đẹp! ☀️",
+        "Hello! Mưa rơi cũng không làm giảm năng lượng của bạn! 🌧️",
+        "Xin chào! Thời tiết đẹp như tâm hồn bạn! 🌈",
+        "Chào bạn! Dù mưa hay nắng vẫn phải tươi cười nhé! ⛅",
+        "Hi! Hãy là ánh nắng cho ngày u ám! 🌞",
+
+        // Lời chào thư giãn
+        "Đừng quên thư giãn nhé! 😌",
+        "Hãy tận hưởng những điều nhỏ bé! 🌸",
+        "Dành thời gian cho bản thân nhé! 🧘‍♀️",
+        "Nghỉ ngơi đúng lúc để có sức khỏe tốt! 🛋️",
+        "Thư giãn một chút để refresh năng lượng! 🌿",
+
+        // Lời chào về ước mơ
+        "Hãy theo đuổi ước mơ của bạn! 🌠",
+        "Không gì là không thể! 🚀",
+        "Ước mơ là để thực hiện! 🎯",
+        "Tin vào điều không tưởng! ✨",
+        "Hãy dám ước mơ và dám thực hiện! 💫",
+
+        // Lời chào về tình bạn
+        "Chào người bạn thân mến! 🤝",
+        "Bạn bè là những thiên thần không cánh! 👫",
+        "Tình bạn là món quà quý giá! 🎁",
+        "Cảm ơn vì đã là bạn của tôi! 💖",
+        "Bạn bè là kho báu của cuộc đời! 🌟",
+
+        // Lời chào về niềm vui
+        "Hãy tìm niềm vui trong những điều nhỏ nhất! 😊",
+        "Nụ cười là liều thuốc tốt nhất! 😄",
+        "Hạnh phúc đến từ trái tim bạn! ❤️",
+        "Lan tỏa niềm vui đến mọi người! 🌈",
+        "Cuộc sống đầy ắp niềm vui! 🎉",
+
+        // Lời chào về sự bình yên
+        "Chúc bạn một ngày bình yên! 🕊️",
+        "Thanh thản trong tâm hồn! 🧘‍♂️",
+        "Bình yên là món quà quý giá! 🎁",
+        "Sống chậm lại để cảm nhận bình yên! 🌿",
+        "Hãy tìm thấy sự bình yên trong tâm hồn! 💝",
+
+        // Lời chào văn hóa
+        "Xin chào! Chúc bạn một ngày tràn đầy văn hóa! 📚",
+        "Hello! Hãy khám phá điều mới mẻ hôm nay! 🔍",
+        "Chào bạn! Học hỏi không bao giờ là đủ! 📖",
+        "Hi! Mỗi ngày một kiến thức mới! 🎓",
+        "Xin chào! Tri thức là sức mạnh! 💡"
+    ];
+
+    function getRandomGreeting() {
+        const randomIndex = Math.floor(Math.random() * greetings.length);
+        return greetings[randomIndex];
+    }
+
+    function changeGreeting() {
+        const greetingElement = document.getElementById('greeting').textContent = getRandomGreeting();
+    }
+
+    // Hiển thị lời chào khi tải trang
+    window.onload = function () {
+        changeGreeting();
+    }
+</script>
+</body>
+</html>

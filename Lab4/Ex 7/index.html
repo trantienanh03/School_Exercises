@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .container {
+            width: 1200px;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        #button-container {
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div id="button-container"></div>
+    </div>
+</div>
+<script>
+    const container = document.getElementById("button-container");
+    let currentNumber = 1;
+    let numbers = [];
+
+    for (let i = 1; i <= 64; i++) {
+        numbers.push(i);
+    }
+    // mix numbers
+    for (let i = numbers.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+    }
+    numbers.forEach(num => {
+        let button = document.createElement("button");
+        button.textContent = num;
+        button.onclick = function () {
+            if (parseInt(this.textContent) === currentNumber) {
+                this.style.visibility = "hidden";
+                currentNumber++;
+            } else {
+                alert("Hãy chọn các số theo thứ tự từ 1 đến 64");
+            }
+        };
+        container.appendChild(button);
+    });
+</script>
+</body>
+</html>
